@@ -1,3 +1,4 @@
+import { User } from './types/user';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularView';
+
+  showForm : boolean  = false;
+  userSelected : User = new User();
+  
+  updateUser(user:User){
+    this.showForm = true;
+    this.userSelected = user;
+
+  }
+  newUser(){
+    this.showForm = true;
+    this.userSelected = new User();
+  }
 }

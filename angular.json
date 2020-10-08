@@ -23,7 +23,8 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
+            "styles": [ 
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",           
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "AngularView"
+    }
+  },
+  "defaultProject": "AngularView",
+  "cli": {
+    "analytics": "25905569-7fe7-4fbd-bd26-58b0faec301d"
+  }
 }
