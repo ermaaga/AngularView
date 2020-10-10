@@ -1,5 +1,5 @@
-import { UserInterface } from './../intefraces/user-interface';
-import { User } from './../types/user';
+import { UserInterface } from '../intefraces/user-interface';
+import { User } from '../types/user';
 import { Injectable } from '@angular/core';
 
 @Injectable({

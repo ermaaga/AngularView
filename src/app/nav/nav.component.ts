@@ -1,3 +1,4 @@
+import { Order } from './../shared/order.model';
 import { User } from './../types/user';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 

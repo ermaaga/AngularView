@@ -1,3 +1,4 @@
+import { OrderService } from './shared/order.services';
 import { RouterModule,Routes} from '@angular/router';
 import { UserService } from './ser/user.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,41 +15,13 @@ import { NavComponent } from './nav/nav.component';
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { ModalBasicComponent } from './modal-basic/modal-basic.component';
 import { UserDataComponent } from './user-data/user-data.component';
-import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { NbLayoutModule } from '@nebular/theme';
+import { LoginComponent } from './login/login.component';
+import { OrdersComponent } from './orders/orders.component';
+import { OrderComponent } from './orders/order/order.component';
+import { OrderItemsComponent } from './orders/order-items/order-items.component';
 
-const routes: Routes = [
-  {
-    path:'users',  
-    component: UsersComponent
-  },
-  {
-    path:'',
-    redirectTo : 'home',  
-    pathMatch:'full'
-
-  },
-  {
-    path:'users/new',
-    component: UserDetailComponent
-  },
-  {
-    path:'users/:id/edit',
-    component: UserDetailComponent    
-  },
-  {
-    path:'users/:id',
-    component: UserDataComponent    
-  },
-  {
-    path:'login',  
-    component: LoginComponent
-  },
-  {
-    path:'home',  
-    component: HomeComponent
-  }
-];
 
 @NgModule({
   declarations: [
@@ -59,8 +32,12 @@ const routes: Routes = [
     NavComponent,
     ModalBasicComponent,
     UserDataComponent,
+    HomeComponent,
     LoginComponent,
-    HomeComponent
+    OrdersComponent,
+    OrderComponent,
+    OrderItemsComponent
+
   ],
   imports: [
     BrowserModule,
@@ -69,9 +46,12 @@ const routes: Routes = [
     NgbModule,
     NgbPaginationModule,
     NgbAlertModule,
-    RouterModule.forRoot(routes)
+    NbLayoutModule
   ],
-  providers: [UserService],
+  providers: [
+    UserService,
+    OrderService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
